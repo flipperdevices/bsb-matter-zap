@@ -22,7 +22,7 @@ void __attribute__((weak)) emberAfBindingClusterInitCallback(EndpointId endpoint
     // To prevent warning
     (void) endpoint;
 }
-void __attribute__((weak)) emberAfColorControlClusterInitCallback(EndpointId endpoint)
+void __attribute__((weak)) emberAfBooleanStateClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
     (void) endpoint;
@@ -62,11 +62,6 @@ void __attribute__((weak)) emberAfGroupKeyManagementClusterInitCallback(Endpoint
     // To prevent warning
     (void) endpoint;
 }
-void __attribute__((weak)) emberAfGroupsClusterInitCallback(EndpointId endpoint)
-{
-    // To prevent warning
-    (void) endpoint;
-}
 void __attribute__((weak)) emberAfIcdManagementClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
@@ -77,7 +72,7 @@ void __attribute__((weak)) emberAfIdentifyClusterInitCallback(EndpointId endpoin
     // To prevent warning
     (void) endpoint;
 }
-void __attribute__((weak)) emberAfLevelControlClusterInitCallback(EndpointId endpoint)
+void __attribute__((weak)) emberAfLocalizationConfigurationClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
     (void) endpoint;
@@ -97,7 +92,7 @@ void __attribute__((weak)) emberAfOtaSoftwareUpdateRequestorClusterInitCallback(
     // To prevent warning
     (void) endpoint;
 }
-void __attribute__((weak)) emberAfOnOffClusterInitCallback(EndpointId endpoint)
+void __attribute__((weak)) emberAfOccupancySensingClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
     (void) endpoint;
@@ -107,17 +102,7 @@ void __attribute__((weak)) emberAfOperationalCredentialsClusterInitCallback(Endp
     // To prevent warning
     (void) endpoint;
 }
-void __attribute__((weak)) emberAfScenesManagementClusterInitCallback(EndpointId endpoint)
-{
-    // To prevent warning
-    (void) endpoint;
-}
 void __attribute__((weak)) emberAfSoftwareDiagnosticsClusterInitCallback(EndpointId endpoint)
-{
-    // To prevent warning
-    (void) endpoint;
-}
-void __attribute__((weak)) emberAfSwitchClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
     (void) endpoint;
