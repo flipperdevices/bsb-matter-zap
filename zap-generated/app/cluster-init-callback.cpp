@@ -22,9 +22,6 @@ void emberAfClusterInitCallback(EndpointId endpoint, ClusterId clusterId)
      case  app::Clusters::Binding::Id:
         emberAfBindingClusterInitCallback(endpoint);
         break;
-     case  app::Clusters::BooleanState::Id:
-        emberAfBooleanStateClusterInitCallback(endpoint);
-        break;
      case  app::Clusters::Descriptor::Id:
         emberAfDescriptorClusterInitCallback(endpoint);
         break;
@@ -46,6 +43,9 @@ void emberAfClusterInitCallback(EndpointId endpoint, ClusterId clusterId)
      case  app::Clusters::GroupKeyManagement::Id:
         emberAfGroupKeyManagementClusterInitCallback(endpoint);
         break;
+     case  app::Clusters::Groups::Id:
+        emberAfGroupsClusterInitCallback(endpoint);
+        break;
      case  app::Clusters::IcdManagement::Id:
         emberAfIcdManagementClusterInitCallback(endpoint);
         break;
@@ -64,11 +64,14 @@ void emberAfClusterInitCallback(EndpointId endpoint, ClusterId clusterId)
      case  app::Clusters::OtaSoftwareUpdateRequestor::Id:
         emberAfOtaSoftwareUpdateRequestorClusterInitCallback(endpoint);
         break;
-     case  app::Clusters::OccupancySensing::Id:
-        emberAfOccupancySensingClusterInitCallback(endpoint);
+     case  app::Clusters::OnOff::Id:
+        emberAfOnOffClusterInitCallback(endpoint);
         break;
      case  app::Clusters::OperationalCredentials::Id:
         emberAfOperationalCredentialsClusterInitCallback(endpoint);
+        break;
+     case  app::Clusters::ScenesManagement::Id:
+        emberAfScenesManagementClusterInitCallback(endpoint);
         break;
      case  app::Clusters::SoftwareDiagnostics::Id:
         emberAfSoftwareDiagnosticsClusterInitCallback(endpoint);

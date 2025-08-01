@@ -21,8 +21,10 @@
 #pragma once
 
 /**** Cluster endpoint counts ****/
-#define MATTER_DM_IDENTIFY_CLUSTER_SERVER_ENDPOINT_COUNT (2)
-#define MATTER_DM_DESCRIPTOR_CLUSTER_SERVER_ENDPOINT_COUNT (3)
+#define MATTER_DM_IDENTIFY_CLUSTER_SERVER_ENDPOINT_COUNT (1)
+#define MATTER_DM_GROUPS_CLUSTER_SERVER_ENDPOINT_COUNT (1)
+#define MATTER_DM_ON_OFF_CLUSTER_SERVER_ENDPOINT_COUNT (1)
+#define MATTER_DM_DESCRIPTOR_CLUSTER_SERVER_ENDPOINT_COUNT (2)
 #define MATTER_DM_BINDING_CLUSTER_SERVER_ENDPOINT_COUNT (1)
 #define MATTER_DM_ACCESS_CONTROL_CLUSTER_SERVER_ENDPOINT_COUNT (1)
 #define MATTER_DM_BASIC_INFORMATION_CLUSTER_SERVER_ENDPOINT_COUNT (1)
@@ -43,9 +45,8 @@
 #define MATTER_DM_GROUP_KEY_MANAGEMENT_CLUSTER_SERVER_ENDPOINT_COUNT (1)
 #define MATTER_DM_FIXED_LABEL_CLUSTER_SERVER_ENDPOINT_COUNT (1)
 #define MATTER_DM_USER_LABEL_CLUSTER_SERVER_ENDPOINT_COUNT (1)
-#define MATTER_DM_BOOLEAN_STATE_CLUSTER_SERVER_ENDPOINT_COUNT (1)
 #define MATTER_DM_ICD_MANAGEMENT_CLUSTER_SERVER_ENDPOINT_COUNT (1)
-#define MATTER_DM_OCCUPANCY_SENSING_CLUSTER_SERVER_ENDPOINT_COUNT (1)
+#define MATTER_DM_SCENES_CLUSTER_SERVER_ENDPOINT_COUNT (1)
 
 /**** Cluster Plugins ****/
 
@@ -53,6 +54,18 @@
 #define ZCL_USING_IDENTIFY_CLUSTER_SERVER
 #define MATTER_DM_PLUGIN_IDENTIFY_SERVER
 #define MATTER_DM_PLUGIN_IDENTIFY
+
+
+// Use this macro to check if the server side of the Groups cluster is included
+#define ZCL_USING_GROUPS_CLUSTER_SERVER
+#define MATTER_DM_PLUGIN_GROUPS_SERVER
+#define MATTER_DM_PLUGIN_GROUPS
+
+
+// Use this macro to check if the server side of the On/Off cluster is included
+#define ZCL_USING_ON_OFF_CLUSTER_SERVER
+#define MATTER_DM_PLUGIN_ON_OFF_SERVER
+#define MATTER_DM_PLUGIN_ON_OFF
 
 
 // Use this macro to check if the server side of the Descriptor cluster is included
@@ -180,20 +193,25 @@
 #define MATTER_DM_PLUGIN_USER_LABEL
 
 
-// Use this macro to check if the server side of the Boolean State cluster is included
-#define ZCL_USING_BOOLEAN_STATE_CLUSTER_SERVER
-#define MATTER_DM_PLUGIN_BOOLEAN_STATE_SERVER
-#define MATTER_DM_PLUGIN_BOOLEAN_STATE
-
-
 // Use this macro to check if the server side of the ICD Management cluster is included
 #define ZCL_USING_ICD_MANAGEMENT_CLUSTER_SERVER
 #define MATTER_DM_PLUGIN_ICD_MANAGEMENT_SERVER
 #define MATTER_DM_PLUGIN_ICD_MANAGEMENT
 
 
-// Use this macro to check if the server side of the Occupancy Sensing cluster is included
-#define ZCL_USING_OCCUPANCY_SENSING_CLUSTER_SERVER
-#define MATTER_DM_PLUGIN_OCCUPANCY_SENSING_SERVER
-#define MATTER_DM_PLUGIN_OCCUPANCY_SENSING
+// Use this macro to check if the server side of the Scenes Management cluster is included
+#define ZCL_USING_SCENES_CLUSTER_SERVER
+#define MATTER_DM_PLUGIN_SCENES_MANAGEMENT_SERVER
+#define MATTER_DM_PLUGIN_SCENES_MANAGEMENT
+// User options for server plugin Scenes Management
+// Cluster spec 1.4.8.7
+#define SCENES_MANAGEMENT_TABLE_SIZE 16
+// Scenes FeatureMap Attribute Toggle Scenes Name feature
+// App cluster specs 1.4.4
+#define MATTER_CLUSTER_SCENE_NAME_SUPPORT_MASK 0x0001
+#define MATTER_CLUSTER_SCENE_NAME_SUPPORT (0x0000 & MATTER_CLUSTER_SCENE_NAME_SUPPORT_MASK)
+// Scenes FeatureMap Table Size feature used for the SCENES_MANAGEMENT_TABLE_SIZE define
+// App cluster specs 1.4.4.2
+#define MATTER_CLUSTER_TABLE_SIZE_SUPPORT_MASK 0x0001
+#define MATTER_CLUSTER_TABLE_SIZE_SUPPORT (0x0000 & MATTER_CLUSTER_TABLE_SIZE_SUPPORT_MASK)
 
