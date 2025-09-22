@@ -55,6 +55,9 @@ void emberAfClusterInitCallback(EndpointId endpoint, ClusterId clusterId)
      case  app::Clusters::LocalizationConfiguration::Id:
         emberAfLocalizationConfigurationClusterInitCallback(endpoint);
         break;
+     case  app::Clusters::ModeSelect::Id:
+        emberAfModeSelectClusterInitCallback(endpoint);
+        break;
      case  app::Clusters::NetworkCommissioning::Id:
         emberAfNetworkCommissioningClusterInitCallback(endpoint);
         break;

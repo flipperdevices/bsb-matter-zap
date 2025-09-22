@@ -77,6 +77,11 @@ void __attribute__((weak)) emberAfLocalizationConfigurationClusterInitCallback(E
     // To prevent warning
     (void) endpoint;
 }
+void __attribute__((weak)) emberAfModeSelectClusterInitCallback(EndpointId endpoint)
+{
+    // To prevent warning
+    (void) endpoint;
+}
 void __attribute__((weak)) emberAfNetworkCommissioningClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
