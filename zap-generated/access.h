@@ -35,17 +35,9 @@
     /* Cluster: Basic Information, Attribute: NodeLabel, Privilege: view */ \
     /* Cluster: Basic Information, Attribute: Location, Privilege: view */ \
     /* Cluster: Basic Information, Attribute: LocalConfigDisabled, Privilege: view */ \
-    /* Cluster: OTA Software Update Requestor, Attribute: DefaultOTAProviders, Privilege: view */ \
     /* Cluster: General Commissioning, Attribute: Breadcrumb, Privilege: view */ \
-    0x00000031, /* Cluster: Network Commissioning, Attribute: MaxNetworks, Privilege: administer */ \
-    0x00000031, /* Cluster: Network Commissioning, Attribute: Networks, Privilege: administer */ \
-    /* Cluster: Network Commissioning, Attribute: InterfaceEnabled, Privilege: view */ \
-    0x00000031, /* Cluster: Network Commissioning, Attribute: LastNetworkingStatus, Privilege: administer */ \
-    0x00000031, /* Cluster: Network Commissioning, Attribute: LastNetworkID, Privilege: administer */ \
-    0x00000031, /* Cluster: Network Commissioning, Attribute: LastConnectErrorValue, Privilege: administer */ \
     0x0000003E, /* Cluster: Operational Credentials, Attribute: NOCs, Privilege: administer */ \
     /* Cluster: Group Key Management, Attribute: GroupKeyMap, Privilege: view */ \
-    /* Cluster: User Label, Attribute: LabelList, Privilege: view */ \
 }
 
 // Parallel array data (cluster, *attribute*, privilege) for read attribute
@@ -56,17 +48,9 @@
     /* Cluster: Basic Information, Attribute: NodeLabel, Privilege: view */ \
     /* Cluster: Basic Information, Attribute: Location, Privilege: view */ \
     /* Cluster: Basic Information, Attribute: LocalConfigDisabled, Privilege: view */ \
-    /* Cluster: OTA Software Update Requestor, Attribute: DefaultOTAProviders, Privilege: view */ \
     /* Cluster: General Commissioning, Attribute: Breadcrumb, Privilege: view */ \
-    0x00000000, /* Cluster: Network Commissioning, Attribute: MaxNetworks, Privilege: administer */ \
-    0x00000001, /* Cluster: Network Commissioning, Attribute: Networks, Privilege: administer */ \
-    /* Cluster: Network Commissioning, Attribute: InterfaceEnabled, Privilege: view */ \
-    0x00000005, /* Cluster: Network Commissioning, Attribute: LastNetworkingStatus, Privilege: administer */ \
-    0x00000006, /* Cluster: Network Commissioning, Attribute: LastNetworkID, Privilege: administer */ \
-    0x00000007, /* Cluster: Network Commissioning, Attribute: LastConnectErrorValue, Privilege: administer */ \
     0x00000000, /* Cluster: Operational Credentials, Attribute: NOCs, Privilege: administer */ \
     /* Cluster: Group Key Management, Attribute: GroupKeyMap, Privilege: view */ \
-    /* Cluster: User Label, Attribute: LabelList, Privilege: view */ \
 }
 
 // Parallel array data (cluster, attribute, *privilege*) for read attribute
@@ -77,17 +61,9 @@
     /* Cluster: Basic Information, Attribute: NodeLabel, Privilege: view */ \
     /* Cluster: Basic Information, Attribute: Location, Privilege: view */ \
     /* Cluster: Basic Information, Attribute: LocalConfigDisabled, Privilege: view */ \
-    /* Cluster: OTA Software Update Requestor, Attribute: DefaultOTAProviders, Privilege: view */ \
     /* Cluster: General Commissioning, Attribute: Breadcrumb, Privilege: view */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Attribute: MaxNetworks, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Attribute: Networks, Privilege: administer */ \
-    /* Cluster: Network Commissioning, Attribute: InterfaceEnabled, Privilege: view */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Attribute: LastNetworkingStatus, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Attribute: LastNetworkID, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Attribute: LastConnectErrorValue, Privilege: administer */ \
     chip::Access::Privilege::kAdminister, /* Cluster: Operational Credentials, Attribute: NOCs, Privilege: administer */ \
     /* Cluster: Group Key Management, Attribute: GroupKeyMap, Privilege: view */ \
-    /* Cluster: User Label, Attribute: LabelList, Privilege: view */ \
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -95,52 +71,40 @@
 // Parallel array data (*cluster*, attribute, privilege) for write attribute
 #define GENERATED_ACCESS_WRITE_ATTRIBUTE__CLUSTER { \
     0x00000006, /* Cluster: On/Off, Attribute: StartUpOnOff, Privilege: manage */ \
-    0x0000001E, /* Cluster: Binding, Attribute: Binding, Privilege: manage */ \
     0x0000001F, /* Cluster: Access Control, Attribute: ACL, Privilege: administer */ \
     0x0000001F, /* Cluster: Access Control, Attribute: Extension, Privilege: administer */ \
     0x00000028, /* Cluster: Basic Information, Attribute: NodeLabel, Privilege: manage */ \
     0x00000028, /* Cluster: Basic Information, Attribute: Location, Privilege: administer */ \
     0x00000028, /* Cluster: Basic Information, Attribute: LocalConfigDisabled, Privilege: manage */ \
-    0x0000002A, /* Cluster: OTA Software Update Requestor, Attribute: DefaultOTAProviders, Privilege: administer */ \
     0x0000002B, /* Cluster: Localization Configuration, Attribute: ActiveLocale, Privilege: manage */ \
     0x00000030, /* Cluster: General Commissioning, Attribute: Breadcrumb, Privilege: administer */ \
-    0x00000031, /* Cluster: Network Commissioning, Attribute: InterfaceEnabled, Privilege: administer */ \
     0x0000003F, /* Cluster: Group Key Management, Attribute: GroupKeyMap, Privilege: manage */ \
-    0x00000041, /* Cluster: User Label, Attribute: LabelList, Privilege: manage */ \
 }
 
 // Parallel array data (cluster, *attribute*, privilege) for write attribute
 #define GENERATED_ACCESS_WRITE_ATTRIBUTE__ATTRIBUTE { \
     0x00004003, /* Cluster: On/Off, Attribute: StartUpOnOff, Privilege: manage */ \
-    0x00000000, /* Cluster: Binding, Attribute: Binding, Privilege: manage */ \
     0x00000000, /* Cluster: Access Control, Attribute: ACL, Privilege: administer */ \
     0x00000001, /* Cluster: Access Control, Attribute: Extension, Privilege: administer */ \
     0x00000005, /* Cluster: Basic Information, Attribute: NodeLabel, Privilege: manage */ \
     0x00000006, /* Cluster: Basic Information, Attribute: Location, Privilege: administer */ \
     0x00000010, /* Cluster: Basic Information, Attribute: LocalConfigDisabled, Privilege: manage */ \
-    0x00000000, /* Cluster: OTA Software Update Requestor, Attribute: DefaultOTAProviders, Privilege: administer */ \
     0x00000000, /* Cluster: Localization Configuration, Attribute: ActiveLocale, Privilege: manage */ \
     0x00000000, /* Cluster: General Commissioning, Attribute: Breadcrumb, Privilege: administer */ \
-    0x00000004, /* Cluster: Network Commissioning, Attribute: InterfaceEnabled, Privilege: administer */ \
     0x00000000, /* Cluster: Group Key Management, Attribute: GroupKeyMap, Privilege: manage */ \
-    0x00000000, /* Cluster: User Label, Attribute: LabelList, Privilege: manage */ \
 }
 
 // Parallel array data (cluster, attribute, *privilege*) for write attribute
 #define GENERATED_ACCESS_WRITE_ATTRIBUTE__PRIVILEGE { \
     chip::Access::Privilege::kManage, /* Cluster: On/Off, Attribute: StartUpOnOff, Privilege: manage */ \
-    chip::Access::Privilege::kManage, /* Cluster: Binding, Attribute: Binding, Privilege: manage */ \
     chip::Access::Privilege::kAdminister, /* Cluster: Access Control, Attribute: ACL, Privilege: administer */ \
     chip::Access::Privilege::kAdminister, /* Cluster: Access Control, Attribute: Extension, Privilege: administer */ \
     chip::Access::Privilege::kManage, /* Cluster: Basic Information, Attribute: NodeLabel, Privilege: manage */ \
     chip::Access::Privilege::kAdminister, /* Cluster: Basic Information, Attribute: Location, Privilege: administer */ \
     chip::Access::Privilege::kManage, /* Cluster: Basic Information, Attribute: LocalConfigDisabled, Privilege: manage */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: OTA Software Update Requestor, Attribute: DefaultOTAProviders, Privilege: administer */ \
     chip::Access::Privilege::kManage, /* Cluster: Localization Configuration, Attribute: ActiveLocale, Privilege: manage */ \
     chip::Access::Privilege::kAdminister, /* Cluster: General Commissioning, Attribute: Breadcrumb, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Attribute: InterfaceEnabled, Privilege: administer */ \
     chip::Access::Privilege::kManage, /* Cluster: Group Key Management, Attribute: GroupKeyMap, Privilege: manage */ \
-    chip::Access::Privilege::kManage, /* Cluster: User Label, Attribute: LabelList, Privilege: manage */ \
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -156,16 +120,7 @@
     0x00000030, /* Cluster: General Commissioning, Command: ArmFailSafe, Privilege: administer */ \
     0x00000030, /* Cluster: General Commissioning, Command: SetRegulatoryConfig, Privilege: administer */ \
     0x00000030, /* Cluster: General Commissioning, Command: CommissioningComplete, Privilege: administer */ \
-    0x00000031, /* Cluster: Network Commissioning, Command: ScanNetworks, Privilege: administer */ \
-    0x00000031, /* Cluster: Network Commissioning, Command: AddOrUpdateWiFiNetwork, Privilege: administer */ \
-    0x00000031, /* Cluster: Network Commissioning, Command: AddOrUpdateThreadNetwork, Privilege: administer */ \
-    0x00000031, /* Cluster: Network Commissioning, Command: RemoveNetwork, Privilege: administer */ \
-    0x00000031, /* Cluster: Network Commissioning, Command: ConnectNetwork, Privilege: administer */ \
-    0x00000031, /* Cluster: Network Commissioning, Command: ReorderNetwork, Privilege: administer */ \
     0x00000033, /* Cluster: General Diagnostics, Command: TestEventTrigger, Privilege: manage */ \
-    0x00000034, /* Cluster: Software Diagnostics, Command: ResetWatermarks, Privilege: manage */ \
-    0x00000035, /* Cluster: Thread Network Diagnostics, Command: ResetCounts, Privilege: manage */ \
-    0x00000037, /* Cluster: Ethernet Network Diagnostics, Command: ResetCounts, Privilege: manage */ \
     0x00000038, /* Cluster: Time Synchronization, Command: SetUTCTime, Privilege: administer */ \
     0x00000038, /* Cluster: Time Synchronization, Command: SetTrustedTimeSource, Privilege: administer */ \
     0x00000038, /* Cluster: Time Synchronization, Command: SetTimeZone, Privilege: manage */ \
@@ -202,16 +157,7 @@
     0x00000000, /* Cluster: General Commissioning, Command: ArmFailSafe, Privilege: administer */ \
     0x00000002, /* Cluster: General Commissioning, Command: SetRegulatoryConfig, Privilege: administer */ \
     0x00000004, /* Cluster: General Commissioning, Command: CommissioningComplete, Privilege: administer */ \
-    0x00000000, /* Cluster: Network Commissioning, Command: ScanNetworks, Privilege: administer */ \
-    0x00000002, /* Cluster: Network Commissioning, Command: AddOrUpdateWiFiNetwork, Privilege: administer */ \
-    0x00000003, /* Cluster: Network Commissioning, Command: AddOrUpdateThreadNetwork, Privilege: administer */ \
-    0x00000004, /* Cluster: Network Commissioning, Command: RemoveNetwork, Privilege: administer */ \
-    0x00000006, /* Cluster: Network Commissioning, Command: ConnectNetwork, Privilege: administer */ \
-    0x00000008, /* Cluster: Network Commissioning, Command: ReorderNetwork, Privilege: administer */ \
     0x00000000, /* Cluster: General Diagnostics, Command: TestEventTrigger, Privilege: manage */ \
-    0x00000000, /* Cluster: Software Diagnostics, Command: ResetWatermarks, Privilege: manage */ \
-    0x00000000, /* Cluster: Thread Network Diagnostics, Command: ResetCounts, Privilege: manage */ \
-    0x00000000, /* Cluster: Ethernet Network Diagnostics, Command: ResetCounts, Privilege: manage */ \
     0x00000000, /* Cluster: Time Synchronization, Command: SetUTCTime, Privilege: administer */ \
     0x00000001, /* Cluster: Time Synchronization, Command: SetTrustedTimeSource, Privilege: administer */ \
     0x00000002, /* Cluster: Time Synchronization, Command: SetTimeZone, Privilege: manage */ \
@@ -248,16 +194,7 @@
     chip::Access::Privilege::kAdminister, /* Cluster: General Commissioning, Command: ArmFailSafe, Privilege: administer */ \
     chip::Access::Privilege::kAdminister, /* Cluster: General Commissioning, Command: SetRegulatoryConfig, Privilege: administer */ \
     chip::Access::Privilege::kAdminister, /* Cluster: General Commissioning, Command: CommissioningComplete, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Command: ScanNetworks, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Command: AddOrUpdateWiFiNetwork, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Command: AddOrUpdateThreadNetwork, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Command: RemoveNetwork, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Command: ConnectNetwork, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Network Commissioning, Command: ReorderNetwork, Privilege: administer */ \
     chip::Access::Privilege::kManage, /* Cluster: General Diagnostics, Command: TestEventTrigger, Privilege: manage */ \
-    chip::Access::Privilege::kManage, /* Cluster: Software Diagnostics, Command: ResetWatermarks, Privilege: manage */ \
-    chip::Access::Privilege::kManage, /* Cluster: Thread Network Diagnostics, Command: ResetCounts, Privilege: manage */ \
-    chip::Access::Privilege::kManage, /* Cluster: Ethernet Network Diagnostics, Command: ResetCounts, Privilege: manage */ \
     chip::Access::Privilege::kAdminister, /* Cluster: Time Synchronization, Command: SetUTCTime, Privilege: administer */ \
     chip::Access::Privilege::kAdminister, /* Cluster: Time Synchronization, Command: SetTrustedTimeSource, Privilege: administer */ \
     chip::Access::Privilege::kManage, /* Cluster: Time Synchronization, Command: SetTimeZone, Privilege: manage */ \
