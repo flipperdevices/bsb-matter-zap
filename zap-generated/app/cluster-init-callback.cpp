@@ -19,11 +19,11 @@ void emberAfClusterInitCallback(EndpointId endpoint, ClusterId clusterId)
      case  app::Clusters::BasicInformation::Id:
         emberAfBasicInformationClusterInitCallback(endpoint);
         break;
+     case  app::Clusters::BridgedDeviceBasicInformation::Id:
+        emberAfBridgedDeviceBasicInformationClusterInitCallback(endpoint);
+        break;
      case  app::Clusters::Descriptor::Id:
         emberAfDescriptorClusterInitCallback(endpoint);
-        break;
-     case  app::Clusters::FixedLabel::Id:
-        emberAfFixedLabelClusterInitCallback(endpoint);
         break;
      case  app::Clusters::GeneralCommissioning::Id:
         emberAfGeneralCommissioningClusterInitCallback(endpoint);

@@ -17,12 +17,12 @@ void __attribute__((weak)) emberAfBasicInformationClusterInitCallback(EndpointId
     // To prevent warning
     (void) endpoint;
 }
-void __attribute__((weak)) emberAfDescriptorClusterInitCallback(EndpointId endpoint)
+void __attribute__((weak)) emberAfBridgedDeviceBasicInformationClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
     (void) endpoint;
 }
-void __attribute__((weak)) emberAfFixedLabelClusterInitCallback(EndpointId endpoint)
+void __attribute__((weak)) emberAfDescriptorClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
     (void) endpoint;
