@@ -617,13 +617,12 @@ namespace Globals {
 // Global structs
 namespace Structs {
 
-namespace TestGlobalStruct {
+namespace AtomicAttributeStatusStruct {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & aWriter, TLV::Tag aTag) const
 {
     DataModel::WrappedStructEncoder encoder{aWriter, aTag};
-    encoder.Encode(to_underlying(Fields::kName), name);
-    encoder.Encode(to_underlying(Fields::kMyBitmap), myBitmap);
-    encoder.Encode(to_underlying(Fields::kMyEnum), myEnum);
+    encoder.Encode(to_underlying(Fields::kAttributeID), attributeID);
+    encoder.Encode(to_underlying(Fields::kStatusCode), statusCode);
     return encoder.Finalize();
 }
 
@@ -638,19 +637,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader &reader) {
         CHIP_ERROR err = CHIP_NO_ERROR;
         const uint8_t __context_tag = std::get<uint8_t>(__element);
 
-if (__context_tag == to_underlying(Fields::kName))
+if (__context_tag == to_underlying(Fields::kAttributeID))
         {
-           err = DataModel::Decode(reader, name);
+           err = DataModel::Decode(reader, attributeID);
         }
         else
-if (__context_tag == to_underlying(Fields::kMyBitmap))
+if (__context_tag == to_underlying(Fields::kStatusCode))
         {
-           err = DataModel::Decode(reader, myBitmap);
-        }
-        else
-if (__context_tag == to_underlying(Fields::kMyEnum))
-        {
-           err = DataModel::Decode(reader, myEnum);
+           err = DataModel::Decode(reader, statusCode);
         }
         else
         {
@@ -660,7 +654,7 @@ if (__context_tag == to_underlying(Fields::kMyEnum))
     }
 }
 
-} // namespace TestGlobalStruct
+} // namespace AtomicAttributeStatusStruct
 
 
 namespace LocationDescriptorStruct {
@@ -709,12 +703,13 @@ if (__context_tag == to_underlying(Fields::kAreaType))
 } // namespace LocationDescriptorStruct
 
 
-namespace AtomicAttributeStatusStruct {
+namespace TestGlobalStruct {
 CHIP_ERROR Type::Encode(TLV::TLVWriter & aWriter, TLV::Tag aTag) const
 {
     DataModel::WrappedStructEncoder encoder{aWriter, aTag};
-    encoder.Encode(to_underlying(Fields::kAttributeID), attributeID);
-    encoder.Encode(to_underlying(Fields::kStatusCode), statusCode);
+    encoder.Encode(to_underlying(Fields::kName), name);
+    encoder.Encode(to_underlying(Fields::kMyBitmap), myBitmap);
+    encoder.Encode(to_underlying(Fields::kMyEnum), myEnum);
     return encoder.Finalize();
 }
 
@@ -729,14 +724,19 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader &reader) {
         CHIP_ERROR err = CHIP_NO_ERROR;
         const uint8_t __context_tag = std::get<uint8_t>(__element);
 
-if (__context_tag == to_underlying(Fields::kAttributeID))
+if (__context_tag == to_underlying(Fields::kName))
         {
-           err = DataModel::Decode(reader, attributeID);
+           err = DataModel::Decode(reader, name);
         }
         else
-if (__context_tag == to_underlying(Fields::kStatusCode))
+if (__context_tag == to_underlying(Fields::kMyBitmap))
         {
-           err = DataModel::Decode(reader, statusCode);
+           err = DataModel::Decode(reader, myBitmap);
+        }
+        else
+if (__context_tag == to_underlying(Fields::kMyEnum))
+        {
+           err = DataModel::Decode(reader, myEnum);
         }
         else
         {
@@ -746,7 +746,7 @@ if (__context_tag == to_underlying(Fields::kStatusCode))
     }
 }
 
-} // namespace AtomicAttributeStatusStruct
+} // namespace TestGlobalStruct
 
 } // namespace Structs
 } // namespace Globals
@@ -5065,6 +5065,8 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader &reader, const Concret
         return DataModel::Decode(reader, TCAcknowledgements);
     case Attributes::TCAcknowledgementsRequired::TypeInfo::GetAttributeId():
         return DataModel::Decode(reader, TCAcknowledgementsRequired);
+    case Attributes::TCUpdateDeadline::TypeInfo::GetAttributeId():
+        return DataModel::Decode(reader, TCUpdateDeadline);
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
         return DataModel::Decode(reader, generatedCommandList);
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
