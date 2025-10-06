@@ -22,11 +22,6 @@ void __attribute__((weak)) emberAfDescriptorClusterInitCallback(EndpointId endpo
     // To prevent warning
     (void) endpoint;
 }
-void __attribute__((weak)) emberAfFixedLabelClusterInitCallback(EndpointId endpoint)
-{
-    // To prevent warning
-    (void) endpoint;
-}
 void __attribute__((weak)) emberAfGeneralCommissioningClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
@@ -63,11 +58,6 @@ void __attribute__((weak)) emberAfOnOffClusterInitCallback(EndpointId endpoint)
     (void) endpoint;
 }
 void __attribute__((weak)) emberAfOperationalCredentialsClusterInitCallback(EndpointId endpoint)
-{
-    // To prevent warning
-    (void) endpoint;
-}
-void __attribute__((weak)) emberAfScenesManagementClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
     (void) endpoint;

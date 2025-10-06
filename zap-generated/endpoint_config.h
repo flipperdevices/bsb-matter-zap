@@ -65,7 +65,7 @@
 
 
 // This is an array of EmberAfAttributeMetadata structures.
-#define GENERATED_ATTRIBUTE_COUNT 141
+#define GENERATED_ATTRIBUTE_COUNT 130
 #define GENERATED_ATTRIBUTES { \
 \
   /* Endpoint: 0, Cluster: Descriptor (server) */ \
@@ -178,11 +178,6 @@
   { ZAP_EMPTY_DEFAULT(), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* FeatureMap */  \
   { ZAP_EMPTY_DEFAULT(), 0x0000FFFD, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* ClusterRevision */  \
 \
-  /* Endpoint: 0, Cluster: Fixed Label (server) */ \
-  { ZAP_EMPTY_DEFAULT(), 0x00000000, 0, ZAP_TYPE(ARRAY), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* LabelList */  \
-  { ZAP_SIMPLE_DEFAULT(0), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
-  { ZAP_SIMPLE_DEFAULT(1), 0x0000FFFD, 2, ZAP_TYPE(INT16U), 0 }, /* ClusterRevision */  \
-\
   /* Endpoint: 1, Cluster: Identify (server) */ \
   { ZAP_SIMPLE_DEFAULT(0x0), 0x00000000, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(WRITABLE) }, /* IdentifyTime */  \
   { ZAP_SIMPLE_DEFAULT(0x00), 0x00000001, 1, ZAP_TYPE(ENUM8), 0 }, /* IdentifyType */  \
@@ -211,12 +206,6 @@
   { ZAP_EMPTY_DEFAULT(), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* FeatureMap */  \
   { ZAP_EMPTY_DEFAULT(), 0x0000FFFD, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* ClusterRevision */  \
 \
-  /* Endpoint: 1, Cluster: Scenes Management (server) */ \
-  { ZAP_SIMPLE_DEFAULT(16), 0x00000001, 2, ZAP_TYPE(INT16U), 0 }, /* SceneTableSize */  \
-  { ZAP_EMPTY_DEFAULT(), 0x00000002, 0, ZAP_TYPE(ARRAY), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* FabricSceneInfo */  \
-  { ZAP_SIMPLE_DEFAULT(0), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
-  { ZAP_SIMPLE_DEFAULT(1), 0x0000FFFD, 2, ZAP_TYPE(INT16U), 0 }, /* ClusterRevision */  \
-\
   /* Endpoint: 2, Cluster: Identify (server) */ \
   { ZAP_SIMPLE_DEFAULT(0x0), 0x00000000, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(WRITABLE) }, /* IdentifyTime */  \
   { ZAP_SIMPLE_DEFAULT(0x00), 0x00000001, 1, ZAP_TYPE(ENUM8), 0 }, /* IdentifyType */  \
@@ -244,12 +233,6 @@
   { ZAP_EMPTY_DEFAULT(), 0x00000003, 0, ZAP_TYPE(ARRAY), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* PartsList */  \
   { ZAP_EMPTY_DEFAULT(), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* FeatureMap */  \
   { ZAP_EMPTY_DEFAULT(), 0x0000FFFD, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* ClusterRevision */  \
-\
-  /* Endpoint: 2, Cluster: Scenes Management (server) */ \
-  { ZAP_SIMPLE_DEFAULT(16), 0x00000001, 2, ZAP_TYPE(INT16U), 0 }, /* SceneTableSize */  \
-  { ZAP_EMPTY_DEFAULT(), 0x00000002, 0, ZAP_TYPE(ARRAY), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* FabricSceneInfo */  \
-  { ZAP_SIMPLE_DEFAULT(0), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
-  { ZAP_SIMPLE_DEFAULT(1), 0x0000FFFD, 2, ZAP_TYPE(INT16U), 0 }, /* ClusterRevision */  \
 }
 
 
@@ -294,10 +277,6 @@ const EmberAfGenericClusterFunction chipFuncArrayGroupsServer[] = {\
 const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
   (EmberAfGenericClusterFunction) emberAfOnOffClusterServerInitCallback,\
   (EmberAfGenericClusterFunction) MatterOnOffClusterServerShutdownCallback,\
-};\
-const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
-  (EmberAfGenericClusterFunction) emberAfScenesManagementClusterServerInitCallback,\
-  (EmberAfGenericClusterFunction) MatterScenesManagementClusterServerShutdownCallback,\
 };\
 
 
@@ -396,31 +375,13 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
   0x00000041 /* OnWithRecallGlobalScene */, \
   0x00000042 /* OnWithTimedOff */, \
   chip::kInvalidCommandId /* end of list */, \
-  /* Endpoint: 1, Cluster: Scenes Management (server) */\
-  /*   AcceptedCommandList (index=68) */ \
-  0x00000000 /* AddScene */, \
-  0x00000001 /* ViewScene */, \
-  0x00000002 /* RemoveScene */, \
-  0x00000003 /* RemoveAllScenes */, \
-  0x00000004 /* StoreScene */, \
-  0x00000005 /* RecallScene */, \
-  0x00000006 /* GetSceneMembership */, \
-  chip::kInvalidCommandId /* end of list */, \
-  /*   GeneratedCommandList (index=76)*/ \
-  0x00000000 /* AddSceneResponse */, \
-  0x00000001 /* ViewSceneResponse */, \
-  0x00000002 /* RemoveSceneResponse */, \
-  0x00000003 /* RemoveAllScenesResponse */, \
-  0x00000004 /* StoreSceneResponse */, \
-  0x00000006 /* GetSceneMembershipResponse */, \
-  chip::kInvalidCommandId /* end of list */, \
   /* Endpoint: 2, Cluster: Identify (server) */\
-  /*   AcceptedCommandList (index=83) */ \
+  /*   AcceptedCommandList (index=68) */ \
   0x00000000 /* Identify */, \
   0x00000040 /* TriggerEffect */, \
   chip::kInvalidCommandId /* end of list */, \
   /* Endpoint: 2, Cluster: Groups (server) */\
-  /*   AcceptedCommandList (index=86) */ \
+  /*   AcceptedCommandList (index=71) */ \
   0x00000000 /* AddGroup */, \
   0x00000001 /* ViewGroup */, \
   0x00000002 /* GetGroupMembership */, \
@@ -428,14 +389,14 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
   0x00000004 /* RemoveAllGroups */, \
   0x00000005 /* AddGroupIfIdentifying */, \
   chip::kInvalidCommandId /* end of list */, \
-  /*   GeneratedCommandList (index=93)*/ \
+  /*   GeneratedCommandList (index=78)*/ \
   0x00000000 /* AddGroupResponse */, \
   0x00000001 /* ViewGroupResponse */, \
   0x00000002 /* GetGroupMembershipResponse */, \
   0x00000003 /* RemoveGroupResponse */, \
   chip::kInvalidCommandId /* end of list */, \
   /* Endpoint: 2, Cluster: On/Off (server) */\
-  /*   AcceptedCommandList (index=98) */ \
+  /*   AcceptedCommandList (index=83) */ \
   0x00000000 /* Off */, \
   0x00000001 /* On */, \
   0x00000002 /* Toggle */, \
@@ -443,30 +404,12 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
   0x00000041 /* OnWithRecallGlobalScene */, \
   0x00000042 /* OnWithTimedOff */, \
   chip::kInvalidCommandId /* end of list */, \
-  /* Endpoint: 2, Cluster: Scenes Management (server) */\
-  /*   AcceptedCommandList (index=105) */ \
-  0x00000000 /* AddScene */, \
-  0x00000001 /* ViewScene */, \
-  0x00000002 /* RemoveScene */, \
-  0x00000003 /* RemoveAllScenes */, \
-  0x00000004 /* StoreScene */, \
-  0x00000005 /* RecallScene */, \
-  0x00000006 /* GetSceneMembership */, \
-  chip::kInvalidCommandId /* end of list */, \
-  /*   GeneratedCommandList (index=113)*/ \
-  0x00000000 /* AddSceneResponse */, \
-  0x00000001 /* ViewSceneResponse */, \
-  0x00000002 /* RemoveSceneResponse */, \
-  0x00000003 /* RemoveAllScenesResponse */, \
-  0x00000004 /* StoreSceneResponse */, \
-  0x00000006 /* GetSceneMembershipResponse */, \
-  chip::kInvalidCommandId /* end of list */, \
 }
 
 // clang-format on
 
 // This is an array of EmberAfCluster structures.
-#define GENERATED_CLUSTER_COUNT 21
+#define GENERATED_CLUSTER_COUNT 18
 // clang-format off
 #define GENERATED_CLUSTERS { \
   { \
@@ -600,22 +543,9 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
       .eventCount = 0, \
     },\
   { \
-      /* Endpoint: 0, Cluster: Fixed Label (server) */ \
-      .clusterId = 0x00000040, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(90), \
-      .attributeCount = 3, \
-      .clusterSize = 6, \
-      .mask = ZAP_CLUSTER_MASK(SERVER), \
-      .functions = NULL, \
-      .acceptedCommandList = nullptr, \
-      .generatedCommandList = nullptr, \
-      .eventList = nullptr, \
-      .eventCount = 0, \
-    },\
-  { \
       /* Endpoint: 1, Cluster: Identify (server) */ \
       .clusterId = 0x00000003, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(93), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(90), \
       .attributeCount = 4, \
       .clusterSize = 9, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION) | ZAP_CLUSTER_MASK(ATTRIBUTE_CHANGED_FUNCTION), \
@@ -628,7 +558,7 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
   { \
       /* Endpoint: 1, Cluster: Groups (server) */ \
       .clusterId = 0x00000004, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(97), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(94), \
       .attributeCount = 3, \
       .clusterSize = 7, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION), \
@@ -641,7 +571,7 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
   { \
       /* Endpoint: 1, Cluster: On/Off (server) */ \
       .clusterId = 0x00000006, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(100), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(97), \
       .attributeCount = 7, \
       .clusterSize = 13, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION) | ZAP_CLUSTER_MASK(SHUTDOWN_FUNCTION), \
@@ -654,7 +584,7 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
   { \
       /* Endpoint: 1, Cluster: Descriptor (server) */ \
       .clusterId = 0x0000001D, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(107), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(104), \
       .attributeCount = 6, \
       .clusterSize = 0, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
@@ -665,27 +595,14 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
       .eventCount = 0, \
     },\
   { \
-      /* Endpoint: 1, Cluster: Scenes Management (server) */ \
-      .clusterId = 0x00000062, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(113), \
-      .attributeCount = 4, \
-      .clusterSize = 8, \
-      .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION) | ZAP_CLUSTER_MASK(SHUTDOWN_FUNCTION), \
-      .functions = chipFuncArrayScenesManagementServer, \
-      .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 68 ), \
-      .generatedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 76 ), \
-      .eventList = nullptr, \
-      .eventCount = 0, \
-    },\
-  { \
       /* Endpoint: 2, Cluster: Identify (server) */ \
       .clusterId = 0x00000003, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(117), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(110), \
       .attributeCount = 4, \
       .clusterSize = 9, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION) | ZAP_CLUSTER_MASK(ATTRIBUTE_CHANGED_FUNCTION), \
       .functions = chipFuncArrayIdentifyServer, \
-      .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 83 ), \
+      .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 68 ), \
       .generatedCommandList = nullptr, \
       .eventList = nullptr, \
       .eventCount = 0, \
@@ -693,25 +610,25 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
   { \
       /* Endpoint: 2, Cluster: Groups (server) */ \
       .clusterId = 0x00000004, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(121), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(114), \
       .attributeCount = 3, \
       .clusterSize = 7, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION), \
       .functions = chipFuncArrayGroupsServer, \
-      .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 86 ), \
-      .generatedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 93 ), \
+      .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 71 ), \
+      .generatedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 78 ), \
       .eventList = nullptr, \
       .eventCount = 0, \
     },\
   { \
       /* Endpoint: 2, Cluster: On/Off (server) */ \
       .clusterId = 0x00000006, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(124), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(117), \
       .attributeCount = 7, \
       .clusterSize = 13, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION) | ZAP_CLUSTER_MASK(SHUTDOWN_FUNCTION), \
       .functions = chipFuncArrayOnOffServer, \
-      .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 98 ), \
+      .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 83 ), \
       .generatedCommandList = nullptr, \
       .eventList = nullptr, \
       .eventCount = 0, \
@@ -719,7 +636,7 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
   { \
       /* Endpoint: 2, Cluster: Descriptor (server) */ \
       .clusterId = 0x0000001D, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(131), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(124), \
       .attributeCount = 6, \
       .clusterSize = 0, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
@@ -729,30 +646,17 @@ const EmberAfGenericClusterFunction chipFuncArrayScenesManagementServer[] = {\
       .eventList = nullptr, \
       .eventCount = 0, \
     },\
-  { \
-      /* Endpoint: 2, Cluster: Scenes Management (server) */ \
-      .clusterId = 0x00000062, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(137), \
-      .attributeCount = 4, \
-      .clusterSize = 8, \
-      .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION) | ZAP_CLUSTER_MASK(SHUTDOWN_FUNCTION), \
-      .functions = chipFuncArrayScenesManagementServer, \
-      .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 105 ), \
-      .generatedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 113 ), \
-      .eventList = nullptr, \
-      .eventCount = 0, \
-    },\
 }
 
 // clang-format on
 
-#define ZAP_FIXED_ENDPOINT_DATA_VERSION_COUNT 21
+#define ZAP_FIXED_ENDPOINT_DATA_VERSION_COUNT 18
 
 // This is an array of EmberAfEndpointType structures.
 #define GENERATED_ENDPOINT_TYPES { \
-  { ZAP_CLUSTER_INDEX(0), 11, 127 }, \
-  { ZAP_CLUSTER_INDEX(11), 5, 37 }, \
-  { ZAP_CLUSTER_INDEX(16), 5, 37 }, \
+  { ZAP_CLUSTER_INDEX(0), 10, 121 }, \
+  { ZAP_CLUSTER_INDEX(10), 4, 29 }, \
+  { ZAP_CLUSTER_INDEX(14), 4, 29 }, \
 }
 
 
@@ -767,7 +671,7 @@ static_assert(ATTRIBUTE_LARGEST <= CHIP_CONFIG_MAX_ATTRIBUTE_STORE_ELEMENT_SIZE,
 #define ATTRIBUTE_SINGLETONS_SIZE (36)
 
 // Total size of attribute storage
-#define ATTRIBUTE_MAX_SIZE (201)
+#define ATTRIBUTE_MAX_SIZE (179)
 
 // Number of fixed endpoints
 #define FIXED_ENDPOINT_COUNT (3)

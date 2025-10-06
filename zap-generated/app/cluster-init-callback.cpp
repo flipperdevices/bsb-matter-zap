@@ -22,9 +22,6 @@ void emberAfClusterInitCallback(EndpointId endpoint, ClusterId clusterId)
      case  app::Clusters::Descriptor::Id:
         emberAfDescriptorClusterInitCallback(endpoint);
         break;
-     case  app::Clusters::FixedLabel::Id:
-        emberAfFixedLabelClusterInitCallback(endpoint);
-        break;
      case  app::Clusters::GeneralCommissioning::Id:
         emberAfGeneralCommissioningClusterInitCallback(endpoint);
         break;
@@ -48,9 +45,6 @@ void emberAfClusterInitCallback(EndpointId endpoint, ClusterId clusterId)
         break;
      case  app::Clusters::OperationalCredentials::Id:
         emberAfOperationalCredentialsClusterInitCallback(endpoint);
-        break;
-     case  app::Clusters::ScenesManagement::Id:
-        emberAfScenesManagementClusterInitCallback(endpoint);
         break;
      case  app::Clusters::TimeSynchronization::Id:
         emberAfTimeSynchronizationClusterInitCallback(endpoint);
