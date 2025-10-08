@@ -2,6 +2,11 @@
 
 using namespace chip;
 
+void __attribute__((weak)) emberAfAccessControlClusterInitCallback(EndpointId endpoint)
+{
+    // To prevent warning
+    (void) endpoint;
+}
 void __attribute__((weak)) emberAfAdministratorCommissioningClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
