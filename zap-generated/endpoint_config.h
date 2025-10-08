@@ -206,7 +206,7 @@
 
 
 // clang-format off
-#define GENERATED_EVENT_COUNT 10
+#define GENERATED_EVENT_COUNT 11
 #define GENERATED_EVENTS { \
   /* Endpoint: 0, Cluster: Access Control (server) */ \
   /* EventList (index=0) */ \
@@ -216,11 +216,12 @@
   0x00000000, /* StartUp */ \
   0x00000001, /* ShutDown */ \
   0x00000002, /* Leave */ \
+  0x00000003, /* ReachableChanged */ \
   /* Endpoint: 0, Cluster: General Diagnostics (server) */ \
-  /* EventList (index=4) */ \
+  /* EventList (index=5) */ \
   0x00000003, /* BootReason */ \
   /* Endpoint: 0, Cluster: Time Synchronization (server) */ \
-  /* EventList (index=5) */ \
+  /* EventList (index=6) */ \
   0x00000000, /* DSTTableEmpty */ \
   0x00000001, /* DSTStatus */ \
   0x00000002, /* TimeZoneStatus */ \
@@ -389,7 +390,7 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
       .acceptedCommandList = nullptr, \
       .generatedCommandList = nullptr, \
       .eventList = ZAP_GENERATED_EVENTS_INDEX( 1 ), \
-      .eventCount = 3, \
+      .eventCount = 4, \
     },\
   { \
       /* Endpoint: 0, Cluster: Localization Configuration (server) */ \
@@ -427,7 +428,7 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
       .functions = NULL, \
       .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 8 ), \
       .generatedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 11 ), \
-      .eventList = ZAP_GENERATED_EVENTS_INDEX( 4 ), \
+      .eventList = ZAP_GENERATED_EVENTS_INDEX( 5 ), \
       .eventCount = 1, \
     },\
   { \
@@ -440,7 +441,7 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
       .functions = NULL, \
       .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 13 ), \
       .generatedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 19 ), \
-      .eventList = ZAP_GENERATED_EVENTS_INDEX( 5 ), \
+      .eventList = ZAP_GENERATED_EVENTS_INDEX( 6 ), \
       .eventCount = 5, \
     },\
   { \
