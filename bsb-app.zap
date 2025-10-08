@@ -337,6 +337,15 @@
               "maxInterval": 65534,
               "reportableChange": 0
             }
+          ],
+          "events": [
+            {
+              "name": "AccessControlEntryChanged",
+              "code": 0,
+              "mfgCode": null,
+              "side": "server",
+              "included": 1
+            }
           ]
         },
         {
