@@ -23,9 +23,7 @@ void MatterIdentifyPluginServerInitCallback();
 void MatterGroupsPluginServerInitCallback();
 void MatterOnOffPluginServerInitCallback();
 void MatterDescriptorPluginServerInitCallback();
-void MatterAccessControlPluginServerInitCallback();
 void MatterBasicInformationPluginServerInitCallback();
-void MatterLocalizationConfigurationPluginServerInitCallback();
 void MatterGeneralCommissioningPluginServerInitCallback();
 void MatterGeneralDiagnosticsPluginServerInitCallback();
 void MatterTimeSynchronizationPluginServerInitCallback();
@@ -33,4 +31,4 @@ void MatterAdministratorCommissioningPluginServerInitCallback();
 void MatterOperationalCredentialsPluginServerInitCallback();
 void MatterGroupKeyManagementPluginServerInitCallback();
 
-#define MATTER_PLUGINS_INIT MatterIdentifyPluginServerInitCallback(); MatterGroupsPluginServerInitCallback(); MatterOnOffPluginServerInitCallback(); MatterDescriptorPluginServerInitCallback(); MatterAccessControlPluginServerInitCallback(); MatterBasicInformationPluginServerInitCallback(); MatterLocalizationConfigurationPluginServerInitCallback(); MatterGeneralCommissioningPluginServerInitCallback(); MatterGeneralDiagnosticsPluginServerInitCallback(); MatterTimeSynchronizationPluginServerInitCallback(); MatterAdministratorCommissioningPluginServerInitCallback(); MatterOperationalCredentialsPluginServerInitCallback(); MatterGroupKeyManagementPluginServerInitCallback(); 
+#define MATTER_PLUGINS_INIT MatterIdentifyPluginServerInitCallback(); MatterGroupsPluginServerInitCallback(); MatterOnOffPluginServerInitCallback(); MatterDescriptorPluginServerInitCallback(); MatterBasicInformationPluginServerInitCallback(); MatterGeneralCommissioningPluginServerInitCallback(); MatterGeneralDiagnosticsPluginServerInitCallback(); MatterTimeSynchronizationPluginServerInitCallback(); MatterAdministratorCommissioningPluginServerInitCallback(); MatterOperationalCredentialsPluginServerInitCallback(); MatterGroupKeyManagementPluginServerInitCallback(); 

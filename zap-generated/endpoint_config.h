@@ -62,7 +62,7 @@
 
 
 // This is an array of EmberAfAttributeMetadata structures.
-#define GENERATED_ATTRIBUTE_COUNT 110
+#define GENERATED_ATTRIBUTE_COUNT 100
 #define GENERATED_ATTRIBUTES { \
 \
   /* Endpoint: 0, Cluster: Descriptor (server) */ \
@@ -71,14 +71,6 @@
   { ZAP_EMPTY_DEFAULT(), 0x00000002, 0, ZAP_TYPE(ARRAY), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* ClientList */  \
   { ZAP_EMPTY_DEFAULT(), 0x00000003, 0, ZAP_TYPE(ARRAY), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* PartsList */  \
   { ZAP_EMPTY_DEFAULT(), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* FeatureMap */  \
-  { ZAP_EMPTY_DEFAULT(), 0x0000FFFD, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* ClusterRevision */  \
-\
-  /* Endpoint: 0, Cluster: Access Control (server) */ \
-  { ZAP_EMPTY_DEFAULT(), 0x00000000, 0, ZAP_TYPE(ARRAY), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) | ZAP_ATTRIBUTE_MASK(WRITABLE) }, /* ACL */  \
-  { ZAP_EMPTY_DEFAULT(), 0x00000002, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* SubjectsPerAccessControlEntry */  \
-  { ZAP_EMPTY_DEFAULT(), 0x00000003, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* TargetsPerAccessControlEntry */  \
-  { ZAP_EMPTY_DEFAULT(), 0x00000004, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* AccessControlEntriesPerFabric */  \
-  { ZAP_SIMPLE_DEFAULT(0), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
   { ZAP_EMPTY_DEFAULT(), 0x0000FFFD, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* ClusterRevision */  \
 \
   /* Endpoint: 0, Cluster: Basic Information (server) */ \
@@ -105,12 +97,6 @@
   { ZAP_EMPTY_DEFAULT(), 0x00000016, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) | ZAP_ATTRIBUTE_MASK(SINGLETON) }, /* MaxPathsPerInvoke */  \
   { ZAP_SIMPLE_DEFAULT(0), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
   { ZAP_SIMPLE_DEFAULT(4), 0x0000FFFD, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(SINGLETON) }, /* ClusterRevision */  \
-\
-  /* Endpoint: 0, Cluster: Localization Configuration (server) */ \
-  { ZAP_EMPTY_DEFAULT(), 0x00000000, 36, ZAP_TYPE(CHAR_STRING), ZAP_ATTRIBUTE_MASK(TOKENIZE) | ZAP_ATTRIBUTE_MASK(WRITABLE) }, /* ActiveLocale */  \
-  { ZAP_EMPTY_DEFAULT(), 0x00000001, 0, ZAP_TYPE(ARRAY), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* SupportedLocales */  \
-  { ZAP_SIMPLE_DEFAULT(0), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
-  { ZAP_SIMPLE_DEFAULT(1), 0x0000FFFD, 2, ZAP_TYPE(INT16U), 0 }, /* ClusterRevision */  \
 \
   /* Endpoint: 0, Cluster: General Commissioning (server) */ \
   { ZAP_LONG_DEFAULTS_INDEX(0), 0x00000000, 8, ZAP_TYPE(INT64U), ZAP_ATTRIBUTE_MASK(WRITABLE) }, /* Breadcrumb */  \
@@ -206,22 +192,19 @@
 
 
 // clang-format off
-#define GENERATED_EVENT_COUNT 11
+#define GENERATED_EVENT_COUNT 10
 #define GENERATED_EVENTS { \
-  /* Endpoint: 0, Cluster: Access Control (server) */ \
-  /* EventList (index=0) */ \
-  0x00000000, /* AccessControlEntryChanged */ \
   /* Endpoint: 0, Cluster: Basic Information (server) */ \
-  /* EventList (index=1) */ \
+  /* EventList (index=0) */ \
   0x00000000, /* StartUp */ \
   0x00000001, /* ShutDown */ \
   0x00000002, /* Leave */ \
   0x00000003, /* ReachableChanged */ \
   /* Endpoint: 0, Cluster: General Diagnostics (server) */ \
-  /* EventList (index=5) */ \
+  /* EventList (index=4) */ \
   0x00000003, /* BootReason */ \
   /* Endpoint: 0, Cluster: Time Synchronization (server) */ \
-  /* EventList (index=6) */ \
+  /* EventList (index=5) */ \
   0x00000000, /* DSTTableEmpty */ \
   0x00000001, /* DSTStatus */ \
   0x00000002, /* TimeZoneStatus */ \
@@ -233,10 +216,6 @@
 
 // Cluster function static arrays
 #define GENERATED_FUNCTION_ARRAYS   \
-const EmberAfGenericClusterFunction chipFuncArrayLocalizationConfigurationServer[] = {\
-  (EmberAfGenericClusterFunction) emberAfLocalizationConfigurationClusterServerInitCallback,\
-  (EmberAfGenericClusterFunction) MatterLocalizationConfigurationClusterServerPreAttributeChangedCallback,\
-};\
 const EmberAfGenericClusterFunction chipFuncArrayIdentifyServer[] = {\
   (EmberAfGenericClusterFunction) emberAfIdentifyClusterServerInitCallback,\
   (EmberAfGenericClusterFunction) MatterIdentifyClusterServerAttributeChangedCallback,\
@@ -350,7 +329,7 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
 // clang-format on
 
 // This is an array of EmberAfCluster structures.
-#define GENERATED_CLUSTER_COUNT 14
+#define GENERATED_CLUSTER_COUNT 12
 // clang-format off
 #define GENERATED_CLUSTERS { \
   { \
@@ -367,48 +346,22 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
       .eventCount = 0, \
     },\
   { \
-      /* Endpoint: 0, Cluster: Access Control (server) */ \
-      .clusterId = 0x0000001F, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(6), \
-      .attributeCount = 6, \
-      .clusterSize = 4, \
-      .mask = ZAP_CLUSTER_MASK(SERVER), \
-      .functions = NULL, \
-      .acceptedCommandList = nullptr, \
-      .generatedCommandList = nullptr, \
-      .eventList = ZAP_GENERATED_EVENTS_INDEX( 0 ), \
-      .eventCount = 1, \
-    },\
-  { \
       /* Endpoint: 0, Cluster: Basic Information (server) */ \
       .clusterId = 0x00000028, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(12), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(6), \
       .attributeCount = 23, \
       .clusterSize = 40, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
       .functions = NULL, \
       .acceptedCommandList = nullptr, \
       .generatedCommandList = nullptr, \
-      .eventList = ZAP_GENERATED_EVENTS_INDEX( 1 ), \
+      .eventList = ZAP_GENERATED_EVENTS_INDEX( 0 ), \
       .eventCount = 4, \
-    },\
-  { \
-      /* Endpoint: 0, Cluster: Localization Configuration (server) */ \
-      .clusterId = 0x0000002B, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(35), \
-      .attributeCount = 4, \
-      .clusterSize = 42, \
-      .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION) | ZAP_CLUSTER_MASK(PRE_ATTRIBUTE_CHANGED_FUNCTION), \
-      .functions = chipFuncArrayLocalizationConfigurationServer, \
-      .acceptedCommandList = nullptr, \
-      .generatedCommandList = nullptr, \
-      .eventList = nullptr, \
-      .eventCount = 0, \
     },\
   { \
       /* Endpoint: 0, Cluster: General Commissioning (server) */ \
       .clusterId = 0x00000030, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(39), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(29), \
       .attributeCount = 7, \
       .clusterSize = 14, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
@@ -421,33 +374,33 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
   { \
       /* Endpoint: 0, Cluster: General Diagnostics (server) */ \
       .clusterId = 0x00000033, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(46), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(36), \
       .attributeCount = 11, \
       .clusterSize = 0, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
       .functions = NULL, \
       .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 8 ), \
       .generatedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 11 ), \
-      .eventList = ZAP_GENERATED_EVENTS_INDEX( 5 ), \
+      .eventList = ZAP_GENERATED_EVENTS_INDEX( 4 ), \
       .eventCount = 1, \
     },\
   { \
       /* Endpoint: 0, Cluster: Time Synchronization (server) */ \
       .clusterId = 0x00000038, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(57), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(47), \
       .attributeCount = 14, \
       .clusterSize = 9, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
       .functions = NULL, \
       .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 13 ), \
       .generatedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 19 ), \
-      .eventList = ZAP_GENERATED_EVENTS_INDEX( 6 ), \
+      .eventList = ZAP_GENERATED_EVENTS_INDEX( 5 ), \
       .eventCount = 5, \
     },\
   { \
       /* Endpoint: 0, Cluster: Administrator Commissioning (server) */ \
       .clusterId = 0x0000003C, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(71), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(61), \
       .attributeCount = 5, \
       .clusterSize = 6, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
@@ -460,7 +413,7 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
   { \
       /* Endpoint: 0, Cluster: Operational Credentials (server) */ \
       .clusterId = 0x0000003E, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(76), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(66), \
       .attributeCount = 8, \
       .clusterSize = 6, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
@@ -473,7 +426,7 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
   { \
       /* Endpoint: 0, Cluster: Group Key Management (server) */ \
       .clusterId = 0x0000003F, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(84), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(74), \
       .attributeCount = 6, \
       .clusterSize = 0, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
@@ -486,7 +439,7 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
   { \
       /* Endpoint: 1, Cluster: Identify (server) */ \
       .clusterId = 0x00000003, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(90), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(80), \
       .attributeCount = 4, \
       .clusterSize = 9, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION) | ZAP_CLUSTER_MASK(ATTRIBUTE_CHANGED_FUNCTION), \
@@ -499,7 +452,7 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
   { \
       /* Endpoint: 1, Cluster: Groups (server) */ \
       .clusterId = 0x00000004, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(94), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(84), \
       .attributeCount = 3, \
       .clusterSize = 7, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION), \
@@ -512,7 +465,7 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
   { \
       /* Endpoint: 1, Cluster: On/Off (server) */ \
       .clusterId = 0x00000006, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(97), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(87), \
       .attributeCount = 7, \
       .clusterSize = 13, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(INIT_FUNCTION) | ZAP_CLUSTER_MASK(SHUTDOWN_FUNCTION), \
@@ -525,7 +478,7 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
   { \
       /* Endpoint: 1, Cluster: Descriptor (server) */ \
       .clusterId = 0x0000001D, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(104), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(94), \
       .attributeCount = 6, \
       .clusterSize = 0, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
@@ -539,12 +492,12 @@ const EmberAfGenericClusterFunction chipFuncArrayOnOffServer[] = {\
 
 // clang-format on
 
-#define ZAP_FIXED_ENDPOINT_DATA_VERSION_COUNT 14
+#define ZAP_FIXED_ENDPOINT_DATA_VERSION_COUNT 12
 
 // This is an array of EmberAfEndpointType structures.
 #define GENERATED_ENDPOINT_TYPES { \
-  { ZAP_CLUSTER_INDEX(0), 10, 121 }, \
-  { ZAP_CLUSTER_INDEX(10), 4, 29 }, \
+  { ZAP_CLUSTER_INDEX(0), 8, 75 }, \
+  { ZAP_CLUSTER_INDEX(8), 4, 29 }, \
 }
 
 
@@ -559,7 +512,7 @@ static_assert(ATTRIBUTE_LARGEST <= CHIP_CONFIG_MAX_ATTRIBUTE_STORE_ELEMENT_SIZE,
 #define ATTRIBUTE_SINGLETONS_SIZE (36)
 
 // Total size of attribute storage
-#define ATTRIBUTE_MAX_SIZE (150)
+#define ATTRIBUTE_MAX_SIZE (104)
 
 // Number of fixed endpoints
 #define FIXED_ENDPOINT_COUNT (2)

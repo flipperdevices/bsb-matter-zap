@@ -10,9 +10,6 @@ void emberAfClusterInitCallback(EndpointId endpoint, ClusterId clusterId)
 {
     switch (clusterId)
     {
-     case  app::Clusters::AccessControl::Id:
-        emberAfAccessControlClusterInitCallback(endpoint);
-        break;
      case  app::Clusters::AdministratorCommissioning::Id:
         emberAfAdministratorCommissioningClusterInitCallback(endpoint);
         break;
@@ -36,9 +33,6 @@ void emberAfClusterInitCallback(EndpointId endpoint, ClusterId clusterId)
         break;
      case  app::Clusters::Identify::Id:
         emberAfIdentifyClusterInitCallback(endpoint);
-        break;
-     case  app::Clusters::LocalizationConfiguration::Id:
-        emberAfLocalizationConfigurationClusterInitCallback(endpoint);
         break;
      case  app::Clusters::OnOff::Id:
         emberAfOnOffClusterInitCallback(endpoint);
