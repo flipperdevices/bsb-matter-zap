@@ -76,7 +76,6 @@
     0x00000028, /* Cluster: Basic Information, Attribute: NodeLabel, Privilege: manage */ \
     0x00000028, /* Cluster: Basic Information, Attribute: Location, Privilege: administer */ \
     0x00000028, /* Cluster: Basic Information, Attribute: LocalConfigDisabled, Privilege: manage */ \
-    0x0000002B, /* Cluster: Localization Configuration, Attribute: ActiveLocale, Privilege: manage */ \
     0x00000030, /* Cluster: General Commissioning, Attribute: Breadcrumb, Privilege: administer */ \
     0x0000003F, /* Cluster: Group Key Management, Attribute: GroupKeyMap, Privilege: manage */ \
 }
@@ -89,7 +88,6 @@
     0x00000005, /* Cluster: Basic Information, Attribute: NodeLabel, Privilege: manage */ \
     0x00000006, /* Cluster: Basic Information, Attribute: Location, Privilege: administer */ \
     0x00000010, /* Cluster: Basic Information, Attribute: LocalConfigDisabled, Privilege: manage */ \
-    0x00000000, /* Cluster: Localization Configuration, Attribute: ActiveLocale, Privilege: manage */ \
     0x00000000, /* Cluster: General Commissioning, Attribute: Breadcrumb, Privilege: administer */ \
     0x00000000, /* Cluster: Group Key Management, Attribute: GroupKeyMap, Privilege: manage */ \
 }
@@ -102,7 +100,6 @@
     chip::Access::Privilege::kManage, /* Cluster: Basic Information, Attribute: NodeLabel, Privilege: manage */ \
     chip::Access::Privilege::kAdminister, /* Cluster: Basic Information, Attribute: Location, Privilege: administer */ \
     chip::Access::Privilege::kManage, /* Cluster: Basic Information, Attribute: LocalConfigDisabled, Privilege: manage */ \
-    chip::Access::Privilege::kManage, /* Cluster: Localization Configuration, Attribute: ActiveLocale, Privilege: manage */ \
     chip::Access::Privilege::kAdminister, /* Cluster: General Commissioning, Attribute: Breadcrumb, Privilege: administer */ \
     chip::Access::Privilege::kManage, /* Cluster: Group Key Management, Attribute: GroupKeyMap, Privilege: manage */ \
 }
@@ -121,11 +118,6 @@
     0x00000030, /* Cluster: General Commissioning, Command: SetRegulatoryConfig, Privilege: administer */ \
     0x00000030, /* Cluster: General Commissioning, Command: CommissioningComplete, Privilege: administer */ \
     0x00000033, /* Cluster: General Diagnostics, Command: TestEventTrigger, Privilege: manage */ \
-    0x00000038, /* Cluster: Time Synchronization, Command: SetUTCTime, Privilege: administer */ \
-    0x00000038, /* Cluster: Time Synchronization, Command: SetTrustedTimeSource, Privilege: administer */ \
-    0x00000038, /* Cluster: Time Synchronization, Command: SetTimeZone, Privilege: manage */ \
-    0x00000038, /* Cluster: Time Synchronization, Command: SetDSTOffset, Privilege: manage */ \
-    0x00000038, /* Cluster: Time Synchronization, Command: SetDefaultNTP, Privilege: administer */ \
     0x0000003C, /* Cluster: Administrator Commissioning, Command: OpenCommissioningWindow, Privilege: administer */ \
     0x0000003C, /* Cluster: Administrator Commissioning, Command: RevokeCommissioning, Privilege: administer */ \
     0x0000003E, /* Cluster: Operational Credentials, Command: AttestationRequest, Privilege: administer */ \
@@ -154,11 +146,6 @@
     0x00000002, /* Cluster: General Commissioning, Command: SetRegulatoryConfig, Privilege: administer */ \
     0x00000004, /* Cluster: General Commissioning, Command: CommissioningComplete, Privilege: administer */ \
     0x00000000, /* Cluster: General Diagnostics, Command: TestEventTrigger, Privilege: manage */ \
-    0x00000000, /* Cluster: Time Synchronization, Command: SetUTCTime, Privilege: administer */ \
-    0x00000001, /* Cluster: Time Synchronization, Command: SetTrustedTimeSource, Privilege: administer */ \
-    0x00000002, /* Cluster: Time Synchronization, Command: SetTimeZone, Privilege: manage */ \
-    0x00000004, /* Cluster: Time Synchronization, Command: SetDSTOffset, Privilege: manage */ \
-    0x00000005, /* Cluster: Time Synchronization, Command: SetDefaultNTP, Privilege: administer */ \
     0x00000000, /* Cluster: Administrator Commissioning, Command: OpenCommissioningWindow, Privilege: administer */ \
     0x00000002, /* Cluster: Administrator Commissioning, Command: RevokeCommissioning, Privilege: administer */ \
     0x00000000, /* Cluster: Operational Credentials, Command: AttestationRequest, Privilege: administer */ \
@@ -187,11 +174,6 @@
     chip::Access::Privilege::kAdminister, /* Cluster: General Commissioning, Command: SetRegulatoryConfig, Privilege: administer */ \
     chip::Access::Privilege::kAdminister, /* Cluster: General Commissioning, Command: CommissioningComplete, Privilege: administer */ \
     chip::Access::Privilege::kManage, /* Cluster: General Diagnostics, Command: TestEventTrigger, Privilege: manage */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Time Synchronization, Command: SetUTCTime, Privilege: administer */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Time Synchronization, Command: SetTrustedTimeSource, Privilege: administer */ \
-    chip::Access::Privilege::kManage, /* Cluster: Time Synchronization, Command: SetTimeZone, Privilege: manage */ \
-    chip::Access::Privilege::kManage, /* Cluster: Time Synchronization, Command: SetDSTOffset, Privilege: manage */ \
-    chip::Access::Privilege::kAdminister, /* Cluster: Time Synchronization, Command: SetDefaultNTP, Privilege: administer */ \
     chip::Access::Privilege::kAdminister, /* Cluster: Administrator Commissioning, Command: OpenCommissioningWindow, Privilege: administer */ \
     chip::Access::Privilege::kAdminister, /* Cluster: Administrator Commissioning, Command: RevokeCommissioning, Privilege: administer */ \
     chip::Access::Privilege::kAdminister, /* Cluster: Operational Credentials, Command: AttestationRequest, Privilege: administer */ \
