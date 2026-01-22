@@ -1575,18 +1575,18 @@
       "id": 2,
       "name": "Anonymous Endpoint Type",
       "deviceTypeRef": {
-        "code": 266,
+        "code": 256,
         "profileId": 259,
-        "label": "MA-onoffpluginunit",
-        "name": "MA-onoffpluginunit",
+        "label": "MA-onofflight",
+        "name": "MA-onofflight",
         "deviceTypeOrder": 0
       },
       "deviceTypes": [
         {
-          "code": 266,
+          "code": 256,
           "profileId": 259,
-          "label": "MA-onoffpluginunit",
-          "name": "MA-onoffpluginunit",
+          "label": "MA-onofflight",
+          "name": "MA-onofflight",
           "deviceTypeOrder": 0
         }
       ],
@@ -1594,10 +1594,10 @@
         1
       ],
       "deviceIdentifiers": [
-        266
+        256
       ],
-      "deviceTypeName": "MA-onoffpluginunit",
-      "deviceTypeCode": 266,
+      "deviceTypeName": "MA-onofflight",
+      "deviceTypeCode": 256,
       "deviceTypeProfileId": 259,
       "clusters": [
         {
